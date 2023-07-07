@@ -2,12 +2,18 @@ console.log('Hello Victoria. Your file is linked');
 
 const modalCloseBtn = document.querySelector('.modal-close');
 const overlay = document.querySelector('.overlay');
-const cards = document.getElementsByClassName('card');
+const cards = document.querySelectorAll('.card');
 
-cards.addEventListener('click', () => {
-    overlay.classList.remove('hidden');
-});
+// cards.addEventListener('click', () => {
+//     overlay.classList.remove('hidden');
+// });
 
 modalCloseBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
+});
+
+cards.forEach(function(element) {
+    element.addEventListener("click", function() {
+        overlay.classList.remove('hidden');
+    });
 });
