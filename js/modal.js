@@ -2,9 +2,9 @@ console.log('Hello Victoria. Your file is linked');
 
 const modalCloseBtn = document.querySelector('.modal-close');
 const overlay = document.querySelector('.overlay');
-const card = document.querySelector('.card');
+const cards = document.getElementsByClassName('card');
 
-card.addEventListener('click', () => {
+cards.addEventListener('click', () => {
     overlay.classList.remove('hidden');
 });
 
