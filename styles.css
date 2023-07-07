@@ -48,11 +48,11 @@ h1 {
     justify-content: center;
 }
 
-h3 {
+.modal h3 {
     margin: 20px 0 5px;
 }
 
-p {
+h3, p {
     margin: 5px 0;
 }
 
