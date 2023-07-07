@@ -4,10 +4,6 @@ const modalCloseBtn = document.querySelector('.modal-close');
 const overlay = document.querySelector('.overlay');
 const cards = document.querySelectorAll('.card');
 
-// cards.addEventListener('click', () => {
-//     overlay.classList.remove('hidden');
-// });
-
 modalCloseBtn.addEventListener('click', () => {
     overlay.classList.add('hidden');
 });
