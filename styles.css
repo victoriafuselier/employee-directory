@@ -64,6 +64,10 @@ h3, p {
     font-size: .75em;
 }
 
+p {
+    color: grey;
+}
+
 .overlay {
     position: absolute;
     top: 0;
