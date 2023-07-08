@@ -83,3 +83,19 @@ modalClose.addEventListener('click', () => {
     overlay.classList.add('hidden');
     body.style.overflow = "auto";
 });
+
+document.getElementById("search-bar").addEventListener("keyup", myFunction);
+
+function myFunction() {
+    const searchInput = document.getElementById('search-bar').value.toLowerCase();
+    const names = document.getElementsByTagName("h2");
+    
+    for (let i = 0; i < names.length; i++) {
+        let namesFilter = names[i].textContent.toLowerCase();
+        if (namesFilter.includes(searchInput)) {
+            names[i].parentNode.parentNode.style.display = '';
+        } else {
+            names[i].parentNode.parentNode.style.display = 'none';
+        }
+    }
+}
