@@ -16,7 +16,7 @@ header {
 }
 
 h1 {
-    font-size: 1em;
+    font-size: .9em;
     text-transform: uppercase;
     color: rgb(77, 76, 76);
 }
@@ -64,7 +64,7 @@ h2, p {
 }
 
 h2 {
-    font-size: 1em;
+    font-size: .9em;
 }
 
 p {
@@ -86,7 +86,7 @@ p {
 }
 
 .modal {
-    width: 285px;
+    width: 260px;
     margin: 0 auto;
     position: relative;
     text-align: center;
@@ -106,7 +106,7 @@ p {
 }
 
 hr {
-    width: 300px;
+    width: 250px;
     border: .5px solid rgb(211, 211, 214);
 }
 
@@ -132,6 +132,14 @@ hr {
         height: 100px;
         width: 100px;
         border-radius: 50%;
+    }
+
+    hr {
+        width: 365px;
+    }
+    
+    .modal {
+        width: 375px;
     }
 }
 
