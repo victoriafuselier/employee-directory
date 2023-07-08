@@ -129,8 +129,8 @@ hr {
     }
 
     .avatar {
-        height: 100px;
-        width: 100px;
+        height: 90px;
+        width: 90px;
         border-radius: 50%;
     }
 }
@@ -144,8 +144,8 @@ hr {
         grid-template-columns: 1fr 1fr 1fr;
     }
     .avatar {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
         border-radius: 50%;
     }
 }
