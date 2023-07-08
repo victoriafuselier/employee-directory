@@ -16,19 +16,15 @@ fetch(urlAPI)
     .catch(err => console.log(err))
 
 function displayEmployees(employeeData) {
-
     employees = employeeData;
-
     // store the employee HTML as we create it
     let employeeHTML = '';
-
     // loop through each employee and create HTML markup
     employees.forEach((employee, index) => {
         let name = employee.name;
         let email = employee.email;
         let city = employee.location.city;
         let picture = employee.picture;
-
         employeeHTML += `
             <div class="card" data-index="${index}">
                 <img class="avatar" src="${picture.large}" />
@@ -38,17 +34,17 @@ function displayEmployees(employeeData) {
                     <p class="address">${city}</p>
                 </div>
             </div>
-        `
+        `;
     });
 
     gridContainer.innerHTML = employeeHTML;
 }
 
 function displayModal(index) {
-
+    let modalHTML = '';
     let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = employees[index];
     let date = new Date(dob.date);
-    const modalHTML = `
+    modalHTML = `
         <img class="avatar" src="${picture.large}" />
         <div class="modal-container">
             <button class="arrow" id="back-button"><</button>
@@ -68,6 +64,20 @@ function displayModal(index) {
     overlay.classList.remove('hidden');
     modalContainer.innerHTML = modalHTML;
     body.style.overflow = "hidden";
+
+    
+    const backButton = document.getElementById('back-button');
+    const forwardButton = document.getElementById('forward-button');
+    
+    if (employees[index] === 0) {
+        backButton.classList.add('hidden');
+        backButton.disabled = false;
+    }
+
+    if (employees[index] === 11) {
+        forwardButton.classList.add('hidden');
+        forwardButton.disabled = true;
+    }
 }
 
 gridContainer.addEventListener('click', e => {
@@ -76,7 +86,6 @@ gridContainer.addEventListener('click', e => {
         // select the card element based on its proximity to actual element clicked
         const card = e.target.closest('.card');
         const index = card.getAttribute('data-index');
-
         displayModal(index);
     }
 });
@@ -102,16 +111,19 @@ function searchFunction() {
     }
 }
 
-const backButton = document.getElementById('back-button');
-const forwardButton = document.getElementById('forward-button');
+// modalContainer.addEventListener('click', e => {
+//     if (e.target !== modalContainer) {
+//         const card = e.target.closest('.card');
+//         if (e.target.textContent === '<') {
+//             const index = card.getAttribute('data-index' -1);
+//         } else if (e.target.textContent === '>') {
+//             const index = card.getAttribute('data-index' +1);
+//         }
+//         displayModal(index);
+//     }
+// });
+    
 
-backButton.addEventListener('focus', () => {
-    displayModal(index - 1);
-});
-
-forwardButton.addEventListener('focus', () => {
-    displayModal(index + 1);
-});
 
 // REMINDER TO GO BACK AND REVISIT TRYING TO CODE FOR FIRST AND LAST CARDS TO NOT HAVE BACK AND FORWARD BUTTONS
 
