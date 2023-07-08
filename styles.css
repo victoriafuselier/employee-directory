@@ -5,7 +5,7 @@ body {
 }
 
 .header-main-container {
-    max-width: 300px;
+    max-width: 350px;
     margin: 0 auto;
     padding: 20px 10px;
 }
@@ -32,7 +32,7 @@ h1 {
 
 #search-bar {
     font-size: .75em;
-    width: 160px;
+    width: 200px;
     padding: 5px;
 }
 
@@ -81,6 +81,11 @@ h1 {
     margin: 20px 0 5px;
 }
 
+.modal-close,
+.arrow {
+    color: grey;
+}
+
 h2, p {
     margin: 5px 0;
 }
@@ -122,6 +127,28 @@ p {
     padding: 30px 20px;
 }
 
+.modal-container {
+    position: relative;
+}
+
+.arrow {
+    font-size: .75em;
+    font-weight: bold;
+    background-color: transparent;
+    border: none;
+    position: absolute;
+    top: 103%;
+    cursor: pointer;
+}
+
+#back-button {
+    left: -4%;
+}
+
+#forward-button {
+    right: -4%;
+}
+
 .modal-close {
     position: absolute;
     top: 15px;
@@ -129,10 +156,11 @@ p {
     cursor: pointer;
     border: none;
     background-color: transparent;
+    font-weight: bold;
 }
 
 hr {
-    width: 250px;
+    width: 200px;
     border: .5px solid rgb(211, 211, 214);
 }
 

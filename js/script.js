@@ -47,19 +47,21 @@ function displayEmployees(employeeData) {
 function displayModal(index) {
 
     let { name, dob, phone, email, location: { city, street, state, postcode }, picture } = employees[index];
-
     let date = new Date(dob.date);
-
     const modalHTML = `
         <img class="avatar" src="${picture.large}" />
-        <div class="text-container">
-            <h2 class="name">${name.first} ${name.last}</h2>
-            <p class="email">${email}</p>
-            <p class="address">${city}</p>
-            <hr />
-            <p>${phone}</p>
-            <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
-            <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+        <div class="modal-container">
+            <button class="arrow" id="back-button"><</button>
+            <div class="text-container">
+                <h2 class="name">${name.first} ${name.last}</h2>
+                <p class="email">${email}</p>
+                <p class="address">${city}</p>
+                <hr />
+                <p>${phone}</p>
+                <p class="address">${street.number} ${street.name}, ${state} ${postcode}</p>
+                <p>Birthday: ${date.getMonth()}/${date.getDate()}/${date.getFullYear()}</p>
+            </div>
+            <button class="arrow" id="forward-button">></button>
         </div>
     `;
 
@@ -84,9 +86,9 @@ modalClose.addEventListener('click', () => {
     body.style.overflow = "auto";
 });
 
-document.getElementById("search-bar").addEventListener("keyup", myFunction);
+document.getElementById("search-bar").addEventListener("keyup", searchFunction);
 
-function myFunction() {
+function searchFunction() {
     const searchInput = document.getElementById('search-bar').value.toLowerCase();
     const names = document.getElementsByTagName("h2");
     
@@ -99,3 +101,24 @@ function myFunction() {
         }
     }
 }
+
+const backButton = document.getElementById('back-button');
+const forwardButton = document.getElementById('forward-button');
+
+backButton.addEventListener('focus', () => {
+    displayModal(index - 1);
+});
+
+forwardButton.addEventListener('focus', () => {
+    displayModal(index + 1);
+});
+
+// REMINDER TO GO BACK AND REVISIT TRYING TO CODE FOR FIRST AND LAST CARDS TO NOT HAVE BACK AND FORWARD BUTTONS
+
+// if (employees[index] === employees[0]) {
+//     backButton.addClass = 'hidden';
+// }
+
+// if (employees[index] === employees[11]) {
+//     forwardButton.addClass = 'hidden';
+// }
