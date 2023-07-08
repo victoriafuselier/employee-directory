@@ -159,6 +159,11 @@ p {
     font-weight: bold;
 }
 
+.modal .avatar {
+    height: 130px;
+    width: 130px;
+}
+
 hr {
     width: 200px;
     border: .5px solid rgb(211, 211, 214);
