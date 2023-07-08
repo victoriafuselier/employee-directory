@@ -1,6 +1,5 @@
 body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
-    padding: 20px;
     margin: auto auto;
     position: relative;
 }
@@ -8,6 +7,7 @@ body {
 .header-main-container {
     max-width: 300px;
     margin: 0 auto;
+    padding: 20px;
 }
 
 header {
@@ -45,9 +45,8 @@ h1 {
 }
 
 .avatar {
-    height: 80px;
-    width: 80px;
     border-radius: 50%;
+    height: 80px;
 }
 
 .text-container {
@@ -56,34 +55,39 @@ h1 {
     justify-content: center;
 }
 
-.modal h3 {
+.modal h2 {
     margin: 20px 0 5px;
 }
 
-h3, p {
+h2, p {
     margin: 5px 0;
 }
 
-h3, p {
-    font-size: .75em;
+h2 {
+    font-size: 1em;
 }
 
 p {
     color: grey;
+    font-size: .75em;
 }
 
 .overlay {
-    position: absolute;
+    position: sticky;
     top: 0;
     right: 0;
     bottom: 0;
     left: 0;
     background: rgba(100, 100, 100, .4);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .modal {
-    width: 375px;
-    margin: 15% auto auto;
+    width: 285px;
+    margin: 0 auto;
     position: relative;
     text-align: center;
     background: #fff;
