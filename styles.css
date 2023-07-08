@@ -143,6 +143,7 @@ hr {
     .grid-container {
         grid-template-columns: 1fr 1fr 1fr;
     }
+
     .avatar {
         height: 100px;
         width: 100px;
