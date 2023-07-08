@@ -7,7 +7,7 @@ body {
 .header-main-container {
     max-width: 300px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 10px;
 }
 
 header {
@@ -32,11 +32,10 @@ h1 {
 .card {
     display: flex;
     flex-direction: row;
-    justify-content: space-evenly;
     align-items: center;
     border: 1px solid lightgrey;
     border-radius: 5px;
-    padding: 10px;
+    padding: 10px 20px;
     height: 125px;
 }
 
@@ -46,13 +45,17 @@ h1 {
 
 .avatar {
     border-radius: 50%;
-    height: 80px;
+    height: 60px;
 }
 
 .text-container {
     display: flex;
     flex-direction: column;
     justify-content: center;
+}
+
+.grid-container .text-container {
+    margin-left: 10px;
 }
 
 .modal h2 {
@@ -70,6 +73,10 @@ h2 {
 p {
     color: grey;
     font-size: .75em;
+}
+
+.email {
+    font-size: .6rem;
 }
 
 .overlay {
@@ -128,16 +135,24 @@ hr {
         text-align: left;
     }
 
+    .card {
+        padding: 10px;
+    }
+
     .avatar {
-        height: 100px;
-        width: 100px;
+        height: 90px;
+        width: 90px;
         border-radius: 50%;
     }
 
     hr {
-        width: 365px;
+        width: 275px;
     }
-    
+
+    .email {
+        font-size: .7em;
+    }
+
     .modal {
         width: 375px;
     }
@@ -156,5 +171,9 @@ hr {
         height: 100px;
         width: 100px;
         border-radius: 50%;
+    }
+
+    hr {
+        width: 300px;
     }
 }

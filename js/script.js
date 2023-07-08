@@ -7,6 +7,7 @@ const gridContainer = document.querySelector('.grid-container');
 const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
+const body = document.querySelector('body');
 
 fetch(urlAPI)
     .then(res => res.json())
@@ -64,6 +65,7 @@ function displayModal(index) {
 
     overlay.classList.remove('hidden');
     modalContainer.innerHTML = modalHTML;
+    body.style.overflow = "hidden";
 }
 
 gridContainer.addEventListener('click', e => {
@@ -79,4 +81,5 @@ gridContainer.addEventListener('click', e => {
 
 modalClose.addEventListener('click', () => {
     overlay.classList.add('hidden');
+    body.style.overflow = "auto";
 });
