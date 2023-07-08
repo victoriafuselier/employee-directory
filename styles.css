@@ -144,8 +144,8 @@ hr {
         grid-template-columns: 1fr 1fr 1fr;
     }
     .avatar {
-        height: 120px;
-        width: 120px;
+        height: 100px;
+        width: 100px;
         border-radius: 50%;
     }
 }
