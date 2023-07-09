@@ -137,7 +137,7 @@ p {
     background-color: transparent;
     border: none;
     position: absolute;
-    top: 103%;
+    top: 50%;
     cursor: pointer;
 }
 
