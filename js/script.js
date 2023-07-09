@@ -1,5 +1,3 @@
-console.log('Hello Victoria. Your file is linked');
-
 let employees = [];
 const urlAPI = `https://randomuser.me/api/?results=12&inc=name, picture,
 email, location, phone, dob &noinfo &nat=US`;
@@ -8,12 +6,14 @@ const overlay = document.querySelector('.overlay');
 const modalContainer = document.querySelector('.modal-content');
 const modalClose = document.querySelector('.modal-close');
 const body = document.querySelector('body');
+const searchBar = document.getElementById("search-bar");
 
 fetch(urlAPI)
     .then(res => res.json())
     .then(res => res.results)
     .then(displayEmployees)
     .catch(err => console.log(err))
+
 
 function displayEmployees(employeeData) {
     employees = employeeData;
@@ -64,19 +64,43 @@ function displayModal(index) {
     overlay.classList.remove('hidden');
     modalContainer.innerHTML = modalHTML;
     body.style.overflow = "hidden";
-
+    
     
     const backButton = document.getElementById('back-button');
     const forwardButton = document.getElementById('forward-button');
-    
-    if (employees[index] === 0) {
+
+    if (parseInt(index) === 0) {
         backButton.classList.add('hidden');
         backButton.disabled = false;
     }
 
-    if (employees[index] === 11) {
+    if (parseInt(index) === 11) {
         forwardButton.classList.add('hidden');
         forwardButton.disabled = true;
+    }
+
+    modalContainer.addEventListener('click', e => {
+        if (e.target.tagName === 'BUTTON') {
+            if (e.target.textContent === '<') {
+                displayModal(parseInt(index)-1);
+            } else if (e.target.textContent === '>') {
+                displayModal(parseInt(index)+1);
+            }
+        }
+    });
+}
+
+function searchFunction() {
+    const searchInput = document.getElementById('search-bar').value.toLowerCase();
+    const names = document.getElementsByTagName("h2");
+    
+    for (let i = 0; i < names.length; i++) {
+        let namesFilter = names[i].textContent.toLowerCase();
+        if (namesFilter.includes(searchInput)) {
+            names[i].parentNode.parentNode.style.display = '';
+        } else {
+            names[i].parentNode.parentNode.style.display = 'none';
+        }
     }
 }
 
@@ -95,42 +119,4 @@ modalClose.addEventListener('click', () => {
     body.style.overflow = "auto";
 });
 
-document.getElementById("search-bar").addEventListener("keyup", searchFunction);
-
-function searchFunction() {
-    const searchInput = document.getElementById('search-bar').value.toLowerCase();
-    const names = document.getElementsByTagName("h2");
-    
-    for (let i = 0; i < names.length; i++) {
-        let namesFilter = names[i].textContent.toLowerCase();
-        if (namesFilter.includes(searchInput)) {
-            names[i].parentNode.parentNode.style.display = '';
-        } else {
-            names[i].parentNode.parentNode.style.display = 'none';
-        }
-    }
-}
-
-// modalContainer.addEventListener('click', e => {
-//     if (e.target !== modalContainer) {
-//         const card = e.target.closest('.card');
-//         if (e.target.textContent === '<') {
-//             const index = card.getAttribute('data-index' -1);
-//         } else if (e.target.textContent === '>') {
-//             const index = card.getAttribute('data-index' +1);
-//         }
-//         displayModal(index);
-//     }
-// });
-    
-
-
-// REMINDER TO GO BACK AND REVISIT TRYING TO CODE FOR FIRST AND LAST CARDS TO NOT HAVE BACK AND FORWARD BUTTONS
-
-// if (employees[index] === employees[0]) {
-//     backButton.addClass = 'hidden';
-// }
-
-// if (employees[index] === employees[11]) {
-//     forwardButton.addClass = 'hidden';
-// }
+searchBar.addEventListener("keyup", searchFunction);
