@@ -33,7 +33,7 @@ h1 {
 #search-bar {
     font-size: .75em;
     width: 200px;
-    padding: 5px;
+    padding: 5px 10px;
 }
 
 .grid-container {
