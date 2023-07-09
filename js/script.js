@@ -78,16 +78,6 @@ function displayModal(index) {
         forwardButton.classList.add('hidden');
         forwardButton.disabled = true;
     }
-
-    modalContainer.addEventListener('click', e => {
-        if (e.target.tagName === 'BUTTON') {
-            if (e.target.textContent === '<') {
-                displayModal(parseInt(index)-1);
-            } else if (e.target.textContent === '>') {
-                displayModal(parseInt(index)+1);
-            }
-        }
-    });
 }
 
 function searchFunction() {
@@ -120,3 +110,13 @@ modalClose.addEventListener('click', () => {
 });
 
 searchBar.addEventListener("keyup", searchFunction);
+
+modalContainer.addEventListener('click', e => {
+    if (e.target.tagName === 'BUTTON') {
+        if (e.target.textContent === '<') {
+            displayModal(parseInt(index)-1);
+        } else if (e.target.textContent === '>') {
+            displayModal(parseInt(index)+1);
+        }
+    }
+});
