@@ -78,6 +78,14 @@ function displayModal(index) {
         forwardButton.classList.add('hidden');
         forwardButton.disabled = true;
     }
+
+    backButton.addEventListener('click', e => {
+        displayModal(parseInt(index)-1);
+    });
+    
+    forwardButton.addEventListener('click', e => {
+        displayModal(parseInt(index)+1);
+    });
 }
 
 function searchFunction() {
@@ -109,14 +117,7 @@ modalClose.addEventListener('click', () => {
     body.style.overflow = "auto";
 });
 
-searchBar.addEventListener("keyup", searchFunction);
 
 modalContainer.addEventListener('click', e => {
     if (e.target.tagName === 'BUTTON') {
-        if (e.target.textContent === '<') {
-            displayModal(parseInt(index)-1);
-        } else if (e.target.textContent === '>') {
-            displayModal(parseInt(index)+1);
-        }
-    }
-});
+searchBar.addEventListener("keyup", searchFunction);
