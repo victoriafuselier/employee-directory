@@ -117,7 +117,4 @@ modalClose.addEventListener('click', () => {
     body.style.overflow = "auto";
 });
 
-
-modalContainer.addEventListener('click', e => {
-    if (e.target.tagName === 'BUTTON') {
 searchBar.addEventListener("keyup", searchFunction);
