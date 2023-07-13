@@ -9,7 +9,7 @@
 
  I went beyond the requirements listed above by: hiding and disabling 'back' modal nav button on first employee modal window and hiding and disabling 'forward' modal nav button on last employee modal window; using a mobile-first approach to ensure that the site works on mobile, tablet, and desktop screen widths--including responsive font-sizing to prevent long name/emails from overflowing containers on narrower screen widths and responsize image sizing to allow for largest avatar size while maintaining proper layout.
 
- Grade Recieved: 'Exceeds Expectations'
+Grade Recieved: 'Exceeds Expectations'
 
 Reviewer Comments: 
     "Great job on this project! You've done some amazing work here interacting with the API and also showing off your Javascript skills to build in extra search functionality for your users! The responsiveness you've implemented is perfect as well! It looks great no matter the screen width! Top-notch!"
